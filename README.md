@@ -14,7 +14,8 @@ In order to configure this app you should look at:
 - `application.properties` contains all the bindings for the defined ENV variables for the DB and Elasticsearch.
 - `/logstash/config-dir/` contains all the standard configs from Logstash with a custom `logstash.conf`, which has the DB credentials etc. and `drivers/` contains the pgjdbc driver needed to connect to PostgreSQL
 
-*Logstash Disclaimer: currently Logstash is only configured to get data from PostgreSQL with a simple SQL query but it does not have filters for duplicates etc. There are numerous Logstash tutorials you can follow to filter your data.*
+*~~Logstash Disclaimer: currently Logstash is only configured to get data from PostgreSQL with a simple SQL query but it does not have filters for duplicates etc. There are numerous Logstash tutorials you can follow to filter your data.~~*
+*Duplication check added via document IDs*
 
 ## Local build with gradle
 
@@ -42,3 +43,5 @@ curl -X POST \
     "search": "Rush Hour 3"
 }'
 ```
+
+There is also an additional API for querying movies through different parameters in order to test Elasticsearch's speed and capabilities.
